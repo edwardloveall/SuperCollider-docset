@@ -6,7 +6,8 @@ require_relative "./scmethods"
 require_relative "./sctutorial"
 
 class Generator
-  BASE_PATH = "supercollider.docset/Contents/Resources"
+  DOCSET_PATH = "supercollider.docset"
+  BASE_PATH = "#{DOCSET_PATH}/Contents/Resources"
   DOCS_PATH = "#{BASE_PATH}/Documents"
 
   attr_reader :src_path, :db
@@ -47,25 +48,8 @@ class Generator
   end
 
   def generate_meta!
-    plist = <<~XML
-      <?xml version="1.0" encoding="UTF-8"?>
-      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-      <plist version="1.0">
-      <dict>
-      	<key>CFBundleIdentifier</key>
-      	<string>supercollider</string>
-      	<key>CFBundleName</key>
-      	<string>SuperCollider</string>
-      	<key>DocSetPlatformFamily</key>
-      	<string>SuperCollider</string>
-      	<key>isDashDocset</key>
-      	<true/>
-      	<key>DashDocSetFamily</key>
-      	<string>dashtoc</string>
-      </dict>
-      </plist>
-    XML
-    File.write("supercollider.docset/Contents/Info.plist", plist)
+    FileUtils.cp("support/Info.plist", "#{DOCSET_PATH}/Contents/Info.plist")
+    FileUtils.cp("support/icon.png", "#{DOCSET_PATH}/icon.png")
   end
 
   def generate_docs!
