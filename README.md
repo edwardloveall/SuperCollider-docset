@@ -6,6 +6,7 @@ Generate a [Dash](https://kapeli.com/dash) [docset](https://kapeli.com/docsets#d
 
 ## Usage
 
+* Open SuperCollider and run `SCDoc.renderAll` to generate HTML help files
 * Clone this repo and `cd` into the directory
 * Run `bundle install`
 * Run `ruby generate.rb`
