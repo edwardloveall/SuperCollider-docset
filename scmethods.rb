@@ -29,7 +29,7 @@ class SCMethods
         searchIndex(name, type, path)
         VALUES (?, ?, ?);
     SQL
-    statement.execute(name, "Method", file_path)
+    statement.execute(method_name, "Method", file_path)
   end
 
   def strip_name_symbols(name)
