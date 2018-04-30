@@ -1,4 +1,3 @@
-require "nokogiri"
 require "uri"
 
 class SCMethods

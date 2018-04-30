@@ -1,7 +1,6 @@
-require "pry"
-require "fileutils"
-require "sqlite3"
-require "execjs"
+require "bundler"
+Bundler.require
+
 require_relative "./scclass"
 require_relative "./scmethods"
 require_relative "./sctutorial"
