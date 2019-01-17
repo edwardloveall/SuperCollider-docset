@@ -25,8 +25,8 @@ class Generator
 
   def prepare_files!
     FileUtils.mkdir_p(DOCS_PATH)
-    src_files = Dir.glob("#{src_path}/*")
     FileUtils.rm_rf(Dir.glob("#{DOCS_PATH}/*"))
+    src_files = Dir.glob("#{src_path}/*")
     FileUtils.cp_r(src_files, DOCS_PATH)
   end
 
